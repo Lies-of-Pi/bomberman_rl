@@ -37,6 +37,14 @@ def setup(self):
         # get the dimension of state space
         state_dimension = 16* 5**(n_nearest_coins + n_nearest_bombs) * 6**n_nearest_bombs
 
+        # empty initialization
+        self.Q = np.zeros((state_dimension, len(ACTIONS)))
+
+        # export matrix as txt
+        np.save("Q_saved.npy", self.Q)
+
+    else:
+        self.logger.info("Loading model from saved state.")
         self.Q = np.load("Q_saved.npy")
 
 
