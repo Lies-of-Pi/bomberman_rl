@@ -17,7 +17,7 @@ from .DeepQNetwork import DeepQNetwork
 ACTIONS = ['UP', 'RIGHT', 'DOWN', 'LEFT', 'WAIT', 'BOMB']
 
 # loading hyperparameters
-with open('agent_code/DeepQNetwork/hyperparameters.txt') as f:
+with open('agent_code/QMan/hyperparameters.txt') as f:
     lines = f.readlines()
 for hyperparameter in lines:
     exec(hyperparameter[:-1]) # so we get all hyperparameters
